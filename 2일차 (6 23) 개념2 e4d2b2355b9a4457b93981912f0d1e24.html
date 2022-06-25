@@ -1,0 +1,694 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>2일차 (6/23) 개념2</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1833438d-3c64-437e-bd90-272525677246" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_orion_nebula.jpg" style="object-position:center 0%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🌒</span></div><h1 class="page-title">2일차 (6/23) 개념2</h1></header><div class="page-body"><p id="204ac6bf-2863-43e3-bdad-3cd4e32f6c4f" class="">
+</p><h2 id="a54081a4-c4b9-4cd0-996e-f0589830c583" class="">CHAP 09. 콘텐츠 컨셉 메이킹 개념과 접근 방법</h2><p id="a797e6db-d5b3-4e3e-b1ca-77764ab8917c" class="">
+</p><figure id="e4d2b235-5b9a-4457-b939-81912f0d1e24"><div class="source"><a href="2%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20(6%2023)%20%E1%84%80%E1%85%A2%E1%84%82%E1%85%A7%E1%86%B72%20e4d2b2355b9a4457b93981912f0d1e24/2020___%2528%2529.pdf">https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4874f101-4216-4ca9-aa1b-d21fcd3fa80f/2020___%28%29.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220624%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20220624T105459Z&amp;X-Amz-Expires=86400&amp;X-Amz-Signature=5b9d66b0e1bea945b98acf246dea322f942b51ee37e8cc6b60bc8efbc9293964&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22%25EC%25BD%2598%25ED%2585%2590%25EC%25B8%25A0%2520%25ED%258A%25B8%25EB%259E%259C%25EB%2593%259C%2520%28%25EB%25B6%2580%25EA%25B0%2580%25EC%259E%2590%25EB%25A3%258C%29.pdf%22&amp;x-id=GetObject</a></div></figure><ul id="f9036586-f240-4221-bf14-30c35b7ed206" class="bulleted-list"><li style="list-style-type:disc">상품의 소구점에 따라 Vid or Img 선택<p id="6e160611-f620-4169-b236-fafbebfed200" class="">ex. 폰(소구점: 휴대성,기능, 소프트웨어)-vid  vs 옷(소구점: 디자인) -img</p><p id="2beeef9a-7c45-4121-8b4e-7911854e087e" class="">ex. 배민커넥트(소구점: 빠른 시작, 시급 높음, 비교적 자유로운 근무) 각각의 소구점에 따라 한 상품 내에서도 콘텐츠의 종류를 달리 사용할 수 있음.</p><p id="c7dee08c-d88a-4fb2-8ffb-94feff1fa8c3" class="">
+</p></li></ul><ul id="11d29fd8-2d8b-42fd-a27e-b72310242df8" class="bulleted-list"><li style="list-style-type:disc">어떤 소구점이 시장에서 반응이 없을 경우 과감하게 빼버려야함. 소구점이 여러가지라 많은 말을 하고 싶어도 강력한 1 message(ex.캐치프레이즈)가 중요함. 먼저 포지셔닝한 고객을 1개의 메시지로 잡고 다른 소구점으로 다른 고객을 잡아햐함.</li></ul><hr id="c6144229-43df-4324-9439-2f1763e5cde9"/><p id="f0c3e8ed-7ab8-4c7b-b81d-96104b880116" class="">
+</p><h2 id="faec9f90-f654-4978-a276-f621863e6c95" class="">CHAP 10. 인바운드 광고 vs 아웃바운드 광고</h2><p id="2d9bfd0a-14ec-4ec1-99cf-f13ef9c17fb3" class="">
+</p><ol type="1" id="52a2f0c1-98b6-45a8-9b06-5a997e9139a0" class="numbered-list" start="1"><li>인바운드 : 고객이 어떤 니즈가 있어 먼저 행동. 사람이 직접 광고를 클릭하여 상호작용 하는 형태<p id="3264d1d8-e7ff-4e48-805d-d936418371e2" class="">ex. 검색결과형 광고(키워드 광고, 블로그 광고, 유튜브 디스커버리 광고)</p><ul id="88e29937-d5ed-4ca1-a0b6-b1b86dc8f647" class="bulleted-list"><li style="list-style-type:disc">이미 고객이 흥미와 니즈를 가지고 있는 상태에서 광고를 찾아오는 형태이므로 전환율 높음, 노출수는 낮음. B2B에 더 적합. </li></ul><p id="c170f8cc-b28d-4215-adee-14b207da3b1f" class="">
+</p></li></ol><ol type="1" id="b92cf245-ae71-42da-997f-97302ce1dbc1" class="numbered-list" start="2"><li>아웃바운드: 광고가 사람에게 송출되어 광고를 클릭하여 상호작용하는 형태<p id="77b26037-b4aa-4fb7-bb74-3beb663b9b61" class="">ex. 페이스북 광고, 유튜브 인스트림 광고, 배너광고</p><ul id="8103f357-f201-493a-bc42-e7aaf5542877" class="bulleted-list"><li style="list-style-type:disc">전환율이 낮음, 노출수는 높음. 타겟팅이 매우 중요</li></ul><p id="31c974b3-600a-4f11-a7a8-8907b02361e6" class="">ex. 마약 베개, 비타민 샤워기 등의 시장 초창기에는 수요 생성 전이므로 아웃바운드 better</p><hr id="fc8558c8-8d01-4119-95ce-99705d53ed52"/><p id="b54580b2-fc9a-4052-ac92-8ded356ea8fa" class="">
+</p></li></ol><h2 id="70014324-7a10-4e98-8eb8-684e16e950a0" class="">CHAP 11. 퍼널별 지표와 목표 설정방법</h2><p id="94814fa1-c574-4461-a8f4-df5af616b914" class="">
+</p><ol type="1" id="43696979-a8bd-45c3-96d8-dfec899398d0" class="numbered-list" start="1"><li>목표까지 가기 위해 관리해야하는 숫자들이 “지표”<p id="c7fa3fc0-ff84-454c-ae6b-73bd30c61d9c" class="">ex. Spotify - 선행지표: 새 아티스트 알림, 음악 추천 → 후행지표: 유저 재방문 이끌어내기   ⇒ 목표<div class="indented"><p id="8f694b1f-f097-43bb-bb58-951d7e585447" class="">              - 선행지표: 플레이리스트 만들기, 새 음악 찾게 하기 → 후행지표: 세션 별 활성 사용시간 증가 </p><p id="7255df2d-f677-4d8b-a1d1-52da985179cc" class="">&gt;&gt; 선행지표와 후행 지표 사이에는 인과관계가 존재, 가장 짧고 빠른 인과관계를 찾아내는 것이 그로스 해킹 // 마케터는 목표 달성을 위한 “지표&quot;를 가지고 이야기해야 함.</p></div></p></li></ol><p id="33f74671-64cc-4ee7-850c-f958bdb3128b" class="">
+</p><ol type="1" id="6b44a41c-98a4-4df1-9ddc-f275e0ba8679" class="numbered-list" start="2"><li>구조<p id="dfad976f-3a08-4a77-9368-4f9709736988" class="">ex. 직방</p><p id="fab2a763-b582-4f52-9e7d-27d44b993055" class="">가격 비교, 3D 집구경, 분양 예약 etc : 다양한 콘텐츠 → 활성 유저수 증가: 가장 중요 → 부동산 매물 업체 광고 성과 상승 : 직방 수익 증대</p><p id="f5748da0-d7f6-48f5-b858-9b1514807ec4" class="">ex. 쿠팡</p><p id="12c7ec4c-9cd8-47f9-8cae-7abbba4a901c" class="">더 낮은 원가 구조율 - 최저가 가능: 광고비 상승, ROAS 상승 → 유저수 증가 : 전환율 증가. ROAS 증가 → 구매수 증가: 규모의 경제</p><hr id="0e7aae74-1600-4490-ae29-859419d79c24"/><p id="d83c7c3c-5bb3-4e41-b60c-f6a8b24e69c7" class="">
+</p><h2 id="11e0f332-0571-4b6e-a1cb-74febb78742e" class="">CHAP 12. 퍼널별 트러블 슈팅 시뮬레이션</h2><p id="e4c19935-47bc-47aa-9bd3-5e0e0b7478e9" class="">
+</p><ol type="1" id="f6bd24a4-d714-4d19-b02f-14df64f13316" class="numbered-list" start="1"><li>두 가지의 퍼널<ul id="83f368ba-8087-4bdc-a95b-b72be6e61f04" class="bulleted-list"><li style="list-style-type:disc"> ‘우리 입장&#x27; 에서의 퍼널 : Awareness - Acquisition - Activation - Revenue - Retention - Referral</li></ul><ul id="1845f4d0-4bf2-480f-882a-30c4b3bb8319" class="bulleted-list"><li style="list-style-type:disc">‘고객 입장&#x27; 에서의 퍼널 : Know(인지) - Like(호감) - Trust(신뢰): 수많은 고객 후기를 읽으며 - Try(시도): 마켓컬리 첫 구매 100원 프로모션 - Buy(구매) - Repeat(재구매) - Refer(추천)</li></ul><p id="3ec7ba2b-ffe9-4e66-afae-5e6592e24b82" class="">
+</p></li></ol><ol type="1" id="433b82b7-9c64-4029-aac5-07de8354ae29" class="numbered-list" start="2"><li>트러플슈팅 시뮬레이션<p id="721faaf6-af2e-4467-8d14-bd4c0a90f41b" class="">Case A. 제품 인지 실패 (Know)</p><p id="b51e2333-ace6-43a5-b2d1-69115994e3eb" class="">Why? </p><ul id="731f70ce-ab20-4cd9-8f72-68faee965fcf" class="bulleted-list"><li style="list-style-type:disc">기존 시장 내 제품(관성)과 차별성이 없어서 : 포지셔닝 실패 ex. 소나타 단종</li></ul><ul id="65f11028-815d-49ff-b77d-f724a2661ce8" class="bulleted-list"><li style="list-style-type:disc"> 어떤 User Job(문제)를 해결해줄 수 있는지 몰라서 : 메시지 전달 실패 → 메시지는 직관적이어야함</li></ul><ul id="f4b12d87-e43a-4f94-a55d-c08801f51a0e" class="bulleted-list"><li style="list-style-type:disc"> 시장이 원하지 않는 제품이라서 : 시장의 고객 니즈 없음</li></ul><p id="e616844e-6bfc-4d0e-a9f7-333438c9c9ef" class="">
+</p><p id="961b2965-f394-491e-9476-14d709642364" class="">Case B. 제품 호감 생성 실패 (Like)</p><p id="52971481-c4b5-4b66-aa89-9b81947b5d3a" class="">Why?</p><ul id="75b85998-a64e-419e-993c-60143e897f5b" class="bulleted-list"><li style="list-style-type:disc">제품의 타겟 설정이 잘못돼서 : 타겟 페르소나 정의 실패</li></ul><ul id="af0a4ccf-be24-4d32-94cd-6227f865048f" class="bulleted-list"><li style="list-style-type:disc"> 가격장벽 또는 유통장벽 존재 : 마켓 진입장벽 존재</li></ul><p id="779fb69b-0ef6-4f67-8df4-168b7d92268e" class="">
+</p><p id="add08834-97a8-4584-bcad-c05d411219f7" class="">Case C. 제품 신뢰 생성 실패(Trust)</p><p id="6098eaca-da34-4eb9-87fd-4da0d2ca3b23" class="">Why?</p><ul id="0d0f1320-077c-498e-8e35-81516c31351e" class="bulleted-list"><li style="list-style-type:disc">제품의 소셜 프루프가 없어서 : 군중 심리 부족 <ul id="642ec3a8-0d27-4300-86ac-45f5f0669fe1" class="bulleted-list"><li style="list-style-type:circle">소셜 프루프: 판매수, 판매금액 (과거 판매 이력) // 후기,댓글 (다른 고객을 통한 간접경험) // 조회수, 추천수, 공유수(간접 영향 지표) // 인증, 특허, 연예인 등(신뢰도 마크)</li></ul><p id="1293c27e-43d0-4ab3-b315-faf26be7b292" class="">ex. 레딧: 초반에 user수 늘리기 위해 가게시글을 계속 posting함.</p></li></ul><ul id="0d9ab662-0628-4209-996f-73c9f31cd780" class="bulleted-list"><li style="list-style-type:disc"> 제품의 User Job을 풀어줄 기대결과로써 불명확해서 : 제품의 설득력 부족</li></ul><p id="6fedc1ea-1438-40f5-bc82-8ca09e4f4110" class="">
+</p><p id="af354f4a-27e3-42d7-9e0f-ccd4c1b33328" class="">Case D. 제품 시도(engagement) 생성 실패(Try)</p><p id="79d039f1-c5ae-421f-9af6-1f5c800ac8db" class="">Why?</p><ul id="7661d835-b7e5-42b0-aa1a-b511dd1ddd9b" class="bulleted-list"><li style="list-style-type:disc"> 참여할 만한 요소가 없어서 : 제품 구매 전 ‘상호 작용 요소&#x27; 부족<p id="4892356c-7db3-4ebd-ae84-122497a9c0c6" class="">ex. 테스트 밸리: 고객 여정을 시도(try)에서부터 시작<div class="indented"><p id="61483502-477e-4f9c-bbfd-dbbcd567aadd" class="">슬랙, 노션: Free trial 제공</p></div></p></li></ul><ul id="7a6b1a7e-6c78-48a8-9d85-bc1154a48546" class="bulleted-list"><li style="list-style-type:disc"> 제품 시도 계기로 프로모션 부족 또는 존재하지 않음 : 제품 프로모션 부족</li></ul><ul id="fde2d478-bd57-46b6-afc0-125c413c212e" class="bulleted-list"><li style="list-style-type:disc"> 지속적인 상호적용 요소 부족(CRM) : 고객 관계 관리 부족</li></ul><p id="c0f29375-da40-4370-8ef8-8d6d94e059f8" class="">
+</p><p id="8fd66bb3-6881-4c8f-8574-6846553f00f7" class="">Case E. 제품 구매 실패(Buy)</p><p id="1834d68a-4244-42b2-8f98-909a7b8fa9ee" class="">Why?</p><ul id="c8fad435-70fb-4fa8-bbeb-95deb181ee6c" class="bulleted-list"><li style="list-style-type:disc"> 불가항력적인 이유 : 고객, 트렌드, 이슈</li></ul><ul id="83ce7d78-a9ac-4837-9bbd-9607dd61bb97" class="bulleted-list"><li style="list-style-type:disc"> 제품을 구매 전 ‘기대 결과 경험 전달&#x27;이 미완성: 고객 여정 맵 관찰 필요, 시도해봤으나 기대 충족 x</li></ul><p id="eaea3506-a233-45e6-8ed8-85fc528b3efe" class="">
+</p><p id="fc84014a-fd3e-40d6-89be-fb6b48f5b168" class="">Case F. 제품 재구매 실패(Repeat)</p><p id="050572dc-fa7f-40f9-90e0-72609c39d3c3" class="">Why?</p><ul id="f9b91087-6fb7-44b7-9211-3e7edc28c96d" class="bulleted-list"><li style="list-style-type:disc"> 제품에 불만족: 제품 개선 필요</li></ul><ul id="9c7f8754-cb78-48cd-9c9b-4051b3a653d0" class="bulleted-list"><li style="list-style-type:disc"> 1회성 구매로 구치는 경우: UP&amp;Cross Selling, Value Chain 확장</li></ul><ul id="42aa6494-c77a-49bc-8547-8375929493f0" class="bulleted-list"><li style="list-style-type:disc"> 고객 구매 주기 안에서 고객관계관리 실패한 경우: 고객 구매 CRM 필요(사후관리 필요)</li></ul><p id="e57e4d44-955c-4ee0-b9c8-579e404b6189" class="">
+</p><p id="79ff9e76-d46a-482a-be2f-ed934fa16d70" class="">Case G. 제품 추천 실패(Refer) viral 이 안됨</p><p id="379efaef-3b0d-41b8-aad3-594aa4b3bb93" class="">Why?</p><ul id="30f746fb-4e3b-48f3-a126-53f0fb0ef3e2" class="bulleted-list"><li style="list-style-type:disc"> 추천 계기 부족: 추천 위한 마케팅 필요</li></ul><ul id="2a66b57a-fbde-48f6-b057-a5def1060e87" class="bulleted-list"><li style="list-style-type:disc"> 추천 동기 부족(동기 = 시간 x 능력): 추천 리워드 이벤트 필요 </li></ul><p id="449f315a-8e8b-4850-bdd9-12468fefc071" class="">ex. 이커머스 ‘올웨이즈&#x27; </p><figure id="8842f112-1731-4d35-89e1-f9d8936dacb1"><div class="source"><a href="https://www.youtube.com/watch?v=L2sNAQYLNbA">https://www.youtube.com/watch?v=L2sNAQYLNbA</a></div></figure><p id="0c41cbd9-75c7-4d8e-b291-2dead3b4c20b" class="">8:20’ 폭발적인 Viral을 이뤄낸 계기</p><p id="ced6acb3-2043-4d44-84d5-e209ec3cc6a1" class="">: 중국의 ‘핀둬둬&#x27;라는 이커머스 앱에서 휴지 최저가 판매를 진행하며 ‘중국인들 중엔 핀둬둬 휴지가 너무 싸서 안사본 사람이 없을 정도&#x27;라는 말을 듣고 상품 하나에 집중하여 최저가 프로모션을 진행. 양파 하나에 400원에 판매하고 10인 팀 구매로 만들어 대성공. 이후 ‘감귤 99인 팀&#x27; 진행하자, 아파트 단톡방, 맘카페에 엄청나게 바이럴되며 100팀 성사. </p><hr id="78f521ee-f29e-41b9-a444-5da3c03017bc"/><p id="c3e4398b-82c6-4361-b360-aafb815fb368" class="">
+</p></li></ol><h2 id="b6ef1468-f84e-40a7-ba0d-85488e298a6c" class="">CHAP 13. 지속행동을 이끄는 행동 코호트와 Retention</h2><p id="96366c94-039a-496b-935e-23ba73896236" class="">코호트: 특징을 공유하는 주제그룹</p><ul id="74ca4cb3-c3ec-40d4-98d2-30f87512eab7" class="bulleted-list"><li style="list-style-type:disc">고객획득보다 고객 유지(Retention)가 더 중요. <ul id="32e449de-288c-4800-8691-0e9e0ba6864b" class="bulleted-list"><li style="list-style-type:circle">Retention: 유입된 유저가 우리 서비스가 제공하는 가치를 느꺄(Aha moment) 다시 우리 서비스로 돌아와서 중요 이벤트(Macro Conversion)를 반복적으로 수행하는가를 리텐션의 기준으로 봄</li></ul><ul id="67c238b6-5976-47c6-b882-be2ef5d9b7cd" class="bulleted-list"><li style="list-style-type:circle">정의: 지표, 주기<ul id="a2cc458f-b3ef-4843-9fa1-c5e9c33579c0" class="bulleted-list"><li style="list-style-type:square">ex. 가입후 1일째 되는 날에 재방문/ 방문한지 7일 이내에 재방문/ 구매한지 한 달 이내에 재구매/ 첫 구독후 다음 주기에 재구독</li></ul></li></ul><ul id="bc08e879-b414-4a5e-874d-dcf3d86cc2b1" class="bulleted-list"><li style="list-style-type:circle">퍼널의 밑 부분을 잡지 못하면 밑 빠진 독에 물 붓기이므로 리텐션을 모니터링하고 개선하는 것이 굉장히 중요하며 앞 부분보다 선행되어야함.</li></ul></li></ul><figure id="c2f7bf47-c816-4ebc-a9f9-7d39e830e39d" class="image"><a href="https://miro.medium.com/max/1400/0*ObQUvRFPNc2Y8YZo"><img style="width:1200px" src="https://miro.medium.com/max/1400/0*ObQUvRFPNc2Y8YZo"/></a></figure><ul id="f8810022-8a36-4f7e-aa70-0bc33bb912ee" class="bulleted-list"><li style="list-style-type:disc">ex. 토스의 리텐션</li></ul><figure id="37519bef-6d35-496d-8c78-9b25babcb100"><div class="source"><a href="https://youtu.be/0KgOCKJ1PG4">https://youtu.be/0KgOCKJ1PG4</a></div></figure><p id="f64f01cb-d424-4da2-8d84-c4cbec5276c8" class=""><div class="indented"><p id="56291cfb-a3db-4cbb-8ed3-2a569d429a63" class="">: P/M fit을 찾으면 리텐션 그래프가 후하향되어 0에 수렴하는 일은 거의 없음. </p><p id="1090c9bd-8eff-4847-a83b-2f1badfac88a" class="">  리텐션 커브가 플랫이 됐을 때 고객과 제품이 정의된 것이므로 이때의 분석이 중요<div class="indented"><ul id="819b000f-e6f2-4fd4-bfc6-27cd89665377" class="bulleted-list"><li style="list-style-type:disc">리텐션 20%: Boarder line. 이하라면 그것으론 회사를 만들 수 없음. 이상이라면 가능은 하지만 아주 큰 비즈니스는 불가]</li></ul><ul id="8d0bfa6b-93e2-4c37-beb2-3f4fd00b3fe1" class="bulleted-list"><li style="list-style-type:disc">리텐션 40% 이상: Unicorn 생성 가능</li></ul><ul id="758f8ba0-7144-47bd-9efb-f5c2499ccc1c" class="bulleted-list"><li style="list-style-type:disc">리텐션 70% : 산업 혁신 가능</li></ul></div></p><p id="3333001c-0008-4424-8b94-9633359e2b4c" class="">   토스 간편 송금 런칭 시 초기 리텐션: 68% </p><p id="404aeed0-c072-431d-b5c7-eccc4fc7d6a6" class="">   토스의 Aha moment : 4일 이내에 간편 송금 2회 → 거의 모두 잔존.</p><p id="b5dc620c-26bb-4237-907e-843709318038" class="">
+</p><p id="a2966d98-29a5-4198-9e65-4e3c94419d6d" class="">🌱지원하는 기업의 리텐션(기준, 주기) 알아보기. </p><hr id="dfc0e8cd-4fc6-4a4b-ae2e-ce8c571b4391"/><p id="153a9240-d711-4348-a452-554694fa14fa" class="">
+</p></div></p><h2 id="8957b280-f2c0-4a8d-80c9-795ab5d39c08" class="">CHAP 14. 고객관계관리(CRM)를 위한 마케팅</h2><p id="66c19c8b-291e-479b-abf1-925428c4f9d7" class="">CRM: 고객을 파악하여 고객의 접점(Touch Point)에서 지속적인 커뮤니케이션 활동을 통해 서비스, 더 나아가 브래드에 관여도를 높이는 활동<div class="indented"><ol type="1" id="b688d09b-f722-4685-9f25-e2885b341905" class="numbered-list" start="1"><li>온사이트 마케팅(On-Site) : 플로팅 배너, 팝업창, CS(상담, 응대)</li></ol><ol type="1" id="50090a07-d8e2-4aa5-b02e-7d4d56114907" class="numbered-list" start="2"><li>오프사이트 마케팅(Off-Site): 이메일(문자),푸쉬, 알림, 해피콜(고객만족조사)</li></ol><hr id="a6fe4683-cebc-45e7-88ad-1261bc1d587b"/><p id="d43ce540-3ef6-4562-818d-c2b631658b3b" class="">
+</p></div></p><h2 id="1af12460-ed30-4e6b-9147-158a641cf132" class="">CHAP 15. 광고예산 설정방법과 관리</h2><ol type="1" id="bc6ca61c-e6b8-42a7-909c-4b4db833da3f" class="numbered-list" start="1"><li>유닛 이코노믹스</li></ol><figure id="2af5fb7f-6ef2-4dd1-9c5d-7c4ee2f9386d"><a href="https://brunch.co.kr/@neolee91/27" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">유닛 이코노믹스</div><div class="bookmark-description">본 글은 FastVenture에서 주관하는 TEXTBOOK 2020 Fall Batch의 강의를 듣고 요약한 글입니다. 더 자세한 내용과 Full 영상을 보고 싶으시다면 TEXTBOOK 다음 Batch에 지원해보세요! TEXTBOOK이란? : https://fastventures.co.kr/textbook/ TEXTBOOK 다음 기수 대기명단 신청하기 : https://bit.ly/3ebYoPC = 돈을 얼마나 써서 기업을 얼마나 성장시킬 수 있는가?</div></div><div class="bookmark-href"><img src="https://t1.daumcdn.net/brunch/static/icon/favicon/favicon64_150520.ico" class="icon bookmark-icon"/>https://brunch.co.kr/@neolee91/27</div></div><img src="http://img1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/8JiI/image/3bJsYEjt1BQbdVy8AxBo9fbHs74.png" class="bookmark-image"/></a></figure><figure id="54f2628e-9f96-4904-9a32-d22ef08ab3f9" class="image"><a href="https://blog.kakaocdn.net/dn/cvCUqy/btqN2UjSHTg/fm2IwjKrOfMNxn1sdfKHs0/img.png"><img src="https://blog.kakaocdn.net/dn/cvCUqy/btqN2UjSHTg/fm2IwjKrOfMNxn1sdfKHs0/img.png"/></a></figure><ul id="cc09df6d-e5df-4cef-bc35-4ab5daa50203" class="bulleted-list"><li style="list-style-type:disc">LTV와 CAC가 만나는 지점이 Payback<ul id="9c770ce1-2205-4a44-98f8-847399406438" class="bulleted-list"><li style="list-style-type:circle">A: 페이백 기간 12개월, 기존 퍼포먼스 위주로 운영한다면 적당한 CAC → 공격적인 캠페인으로 C형으로 변화 가능, LTV가 개선되며 페이백 기간 6개월로 단축</li></ul><ul id="665a46e8-b28c-4968-bb26-ad76f80543f0" class="bulleted-list"><li style="list-style-type:circle">B: 싼 가격에 고객을 모음, LTV 축적이 늦어 페이백 기간이 멀어짐, CAC가 낮아 마케팅에 대한 조직의 지지가 높음 → but LTV 축적 속도가 너무 느림 ⇒ LTV 개선하는 재구매율, 방문 빈도 높이는 리텐션 마케팅 필요</li></ul><ul id="de0dfb9f-a406-4e4f-a5e8-bddab3c40394" class="bulleted-list"><li style="list-style-type:circle">C: 비싼 가격에 고객을 모음, LTV가 가파르게 상승 → 페이백 기간이 가장 짧음, CAC가 높아 동종 경쟁자 B에 비해 마케팅에 대한 조직의 지지가 낮음, LTV의 폭발적인 증가→ 페이백 기간이 3개월 이내로 짧음, LTV를 유지할 수만 있다면 마케팅을 유지하는게 좋음</li></ul></li></ul><p id="b9da3fa5-cd5f-4180-98d4-69ef81b86ad0" class="">
+</p><ol type="1" id="2e0afabb-1830-43b8-aeb2-1c04a7e81143" class="numbered-list" start="2"><li>판매가격(Unit Cost): 공급가(제주가)+변동비(물류비, 보관비, 배송비 등) - 순수익<p id="d612b1bb-3eb1-466f-bc2c-786112c2466f" class="">ex. 9,900원 = 3,300(제조원가) + 2,700원(변동비) - x원(순수익)→홍보비용을 하나도 쓰지 않고 1개를 판매한다면? x원 = 3,900원=최대 CPS</p><ul id="532e3bde-24bd-4ed9-825f-225534e26b94" class="bulleted-list"><li style="list-style-type:disc">변동비: 제조원가, 운반비, 판매 수수료</li></ul><ul id="e79b9450-ace3-4834-825b-032810ff7cc8" class="bulleted-list"><li style="list-style-type:disc">고정비: 인건비, 임차료, 감가상각비, 광고비</li></ul><ul id="fd9c9f6d-1423-4782-955f-6377200fc3e4" class="bulleted-list"><li style="list-style-type:disc">순수익</li></ul><p id="aeaea98d-7a24-4978-8cab-5aa1430278e6" class="">
+</p></li></ol><ul id="ec3e4889-3497-4fdc-8f6e-2ec929758d64" class="bulleted-list"><li style="list-style-type:disc">객단가 계산 → 최대 CPS 산출 → CPA → CPC</li></ul><p id="e9cac763-e002-4f14-bede-3ac0f9c469f1" class="">
+</p><p id="723c929d-d08e-4fc0-912d-9ceb41987d4c" class="">🌱 고객 행동 분석툴: Mix panel, Amplitude, Fire base</p><p id="6620c748-b2d0-44f6-9321-3e27f309f6cd" class="">🌱광고 성과 분석툴: GA, Hot jar, AppsFlyer</p></li></ol></div></article></body></html>
